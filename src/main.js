@@ -1,3 +1,6 @@
+/*
+  通过条形码查找对应的商品信息
+*/
 function findItem(barcode, items) {
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
@@ -7,6 +10,9 @@ function findItem(barcode, items) {
   }
 }
 
+/*
+  查找购物车商品信息
+*/
 function findCartItem(item, cartItems, count) {
   for (var i = 0; i < cartItems.length; i++) {
     if (item === cartItems[i].item) {
@@ -20,6 +26,9 @@ function findCartItem(item, cartItems, count) {
   return cartItems;
 }
 
+/*
+  构建购物车商品信息
+*/
 function buildCartItems(inputs, allItems) {
   var cartItems = [];
 
