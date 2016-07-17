@@ -7,7 +7,7 @@ describe('intergation test', function() {
   var inputs;
 
   beforeEach(function() {
-    allItems = loadAllItems();
+    allItems = fixtures.loadAllItems();
 
       inputs = [
         'ITEM000001',
@@ -17,16 +17,15 @@ describe('intergation test', function() {
         'ITEM000001',
         'ITEM000003-2',
         'ITEM000005',
-        'ITEM000005',
         'ITEM000005'
       ];
   });
 
-  it('print correct text', fucntion(){
+  it('print correct text', function(){
 
     spyOn(console, 'log');
 
-    printReceipt(inputs);
+    mainData.printReceipt(inputs);
 
     var expectText =
      '***<没钱赚商店>收据***\n' +
@@ -45,7 +44,7 @@ describe('intergation test', function() {
    expect(console.log).toHaveBeenCalledWith(expectText);
 
   });
-}
+});
 
 
 describe('unit test', function(){

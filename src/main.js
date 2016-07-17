@@ -1,3 +1,21 @@
+var fixtures = require('../spec/fixtures.js');
+
+/*
+启动 pos 机
+*/
+function printReceipt(inputs) {
+  var allItems = fixtures.loadAllItems();
+  var cartItems = buildCartItems(inputs, allItems);
+
+  var promotions = fixtures.loadPromotions();
+  var receiptItems = buildReceiptItems(cartItems, promotions);
+
+
+  var receipt = buildReceipt(receiptItems);
+  var receiptText = buildReceiptText(receipt, receiptItems);
+  console.log(receiptText);
+}
+
 /*
   通过条形码查找对应的商品信息
 */
@@ -101,7 +119,7 @@ function buildReceiptItems(cartItems, promotions) {
 */
 function promotionItems(receiptItems) {
   var promotionItems = [];
-  var promotions = loadPromotions();
+  var promotions = fixtures.loadPromotions();
 
   receiptItems.forEach(function (receiptItem) {
     var cartItems = receiptItem.cartItem;
@@ -193,5 +211,6 @@ function formatPrice(price) {
 module.exports = {
   buildCartItems:buildCartItems,
   buildReceiptItems:buildReceiptItems,
-  buildReceipt:buildReceipt
+  buildReceipt:buildReceipt,
+  printReceipt:printReceipt
 };
