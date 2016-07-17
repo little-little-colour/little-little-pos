@@ -102,7 +102,7 @@ describe('unit test', function(){
              }
            ];
 
-           expect(buildCartItems(inputs, allItems)).toEqual(expectText);
+           expect(mainData.buildCartItems(inputs, allItems)).toEqual(expectText);
          });
        });
 
