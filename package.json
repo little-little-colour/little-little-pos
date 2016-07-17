@@ -1,0 +1,22 @@
+{
+  "name": "little-little-pos",
+  "version": "1.0.0",
+  "description": "##需求描述",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iPoplar/little-little-pos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iPoplar/little-little-pos/issues"
+  },
+  "homepage": "https://github.com/iPoplar/little-little-pos#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
+}
