@@ -65,7 +65,6 @@ describe('unit test', function(){
              'ITEM000001',
              'ITEM000003-2',
              'ITEM000005',
-             'ITEM000005',
              'ITEM000005'
            ];
          });
