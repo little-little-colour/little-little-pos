@@ -190,4 +190,101 @@ describe("buildReceiptItems", function () {
 });
 
 
+describe("buildReceipt", function () {
+  var receiptItems;
+
+  beforeEach(function () {
+    receiptItems = [
+      {
+        cartItem: {
+          item: {
+            barcode: 'ITEM000001',
+            name: '雪碧',
+            unit: '瓶',
+            price: 3.00
+          },
+          count: 5
+        },
+        saved: 3.00,
+        subTotal: 12.00
+      },
+      {
+        cartItem: {
+          item: {
+            barcode: 'ITEM000003',
+            name: '荔枝',
+            unit: '斤',
+            price: 15.00
+          },
+          count: 2
+        },
+        saved: 0,
+        subTotal: 30.00
+      },
+      {
+        cartItem: {
+          item: {
+            barcode: 'ITEM000005',
+            name: '方便面',
+            unit: '袋',
+            price: 5.50
+          },
+          count: 2
+        },
+        saved: 0.55,
+        subTotal: 10.45
+      }];
+  });
+
+  it("print a receipt object", function () {
+    var expectText =
+    {
+      receiptItem: [
+        {
+          cartItem: {
+            item: {
+              barcode: 'ITEM000001',
+              name: '雪碧',
+              unit: '瓶',
+              price: 3.00
+            },
+            count: 5
+          },
+          saved: 3.00,
+          subTotal: 12.00
+        },
+        {
+          cartItem: {
+            item: {
+              barcode: 'ITEM000003',
+              name: '荔枝',
+              unit: '斤',
+              price: 15.00
+            },
+            count: 2
+          },
+          saved: 0,
+          subTotal: 30.00
+        },
+        {
+          cartItem: {
+            item: {
+              barcode: 'ITEM000005',
+              name: '方便面',
+              unit: '袋',
+              price: 5.50
+            },
+            count: 2
+          },
+          saved: 0.55,
+          subTotal: 10.45
+        }],
+      savedTotal: 3.55,
+      total: 52.45
+    };
+
+    expect(mainData.buildReceipt(receiptItems)).toEqual(expectText);
+  });
+});
+
 });
